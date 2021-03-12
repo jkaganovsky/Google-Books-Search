@@ -29,7 +29,7 @@ function BookSearch() {
           <Form.Control type="search" placeholder="Enter book title" onChange={handleInputChange} value={title} />
         </Form.Group>
 
-        <Button className="align-items-end" variant="primary" type="submit" onClick={handleSubmit}>
+        <Button className="align-items-right" variant="primary" type="submit" onClick={handleSubmit}>
           Search
         </Button>
       </Form>
