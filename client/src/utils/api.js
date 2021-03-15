@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default{
-  getBooks: function(title) {
-    console.log(title,"title");
-    return axios.get("/api/googlebooks/" + title)
+  getBooks: function(book) {
+    console.log("Book:", book);
+    return axios.get("/api/googlebooks/" + book)
   }
 }

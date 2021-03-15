@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Results from "../../components/Results";
 import SearchForm from "../../components/Search";
 
 function BookSearch() {
 
+  const [books, setBooks] = useState([]);
+
+  console.log("Books:", books);
+
   return (
     <div className="p-2">
-      <SearchForm />
+      <SearchForm setBooks={setBooks} />
 
-      <div className="p-2">
-        <Results />
-      </div>
+      <Results books={books}/>
     </div>
   )
 }

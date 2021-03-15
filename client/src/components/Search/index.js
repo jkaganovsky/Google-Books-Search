@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import API from "../../utils/api";
 import { Card, Form, Button } from "react-bootstrap";
 
 
-function SearchForm() {
-  const [title, setTitle] = useState("");
+function SearchForm({ setBooks }) {
 
-  const handleInputChange = e => {
-    const {value} = e.target
-    setTitle(value)
-    console.log(value);
-  }
+  const bookInput = useRef();
 
   const handleSubmit = e => {
     e.preventDefault();
-    API.getBooks(title)
-      .then(results => {
-      console.log(results.data);
-    })
+    API.getBooks(bookInput.current.value)
+      .then(({data}) => {
+      // console.log("Data:", data);
+
+      setBooks(data);
+    });
   }
 
   return (
@@ -25,7 +22,7 @@ function SearchForm() {
       <Form>
         <Form.Group>
           <Form.Label>Book Search</Form.Label>
-          <Form.Control type="search" placeholder="Enter book title" onChange={handleInputChange} value={title} />
+          <Form.Control ref={bookInput} type="search" placeholder="Enter book title"/>
         </Form.Group>
 
         <Button className="align-items-right" variant="primary" type="submit" onClick={handleSubmit}>
