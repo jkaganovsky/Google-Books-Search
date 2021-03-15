@@ -2,9 +2,10 @@ import React from "react";
 import "bootstrap/scss/bootstrap.scss";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BookSearch from "./pages/BookSearch";
 import Saved from "./pages/Saved";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -12,12 +13,11 @@ function App() {
       <Navbar />
       <Header />
       <Router>
-        <Route exact path={["/", "/search"]}>
-          <BookSearch />
-        </Route>
-        <Route exact path={"/saved"}>
-          <Saved />
-        </Route>
+        <Switch>
+          <Route exact path={["/", "/search"]} component={BookSearch}></Route>
+          <Route exact path={"/saved"} component={Saved}></Route>
+          <Route component={NotFound}></Route>
+        </Switch>
       </Router>
     </>
   );
