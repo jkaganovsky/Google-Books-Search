@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // Connecting with Routes
-app.use(require("./routes/api"));
+app.use("/api", require("./routes/api"));
 
 // Send every request to the React app
 // Define any API routes before this runs

@@ -9,20 +9,19 @@ function SearchForm({ setBooks }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    API.getBooks(bookInput.current.value)
+    API.getGoogleBooks(bookInput.current.value)
       .then(({data}) => {
-      // console.log("Data:", data);
-
+      console.log("Form List:", data);
       setBooks(data);
     });
   }
 
   return (
-    <Card className="p-2" border="info">
+    <Card className="p-2 my-4" border="info">
       <Form>
         <Form.Group>
           <Form.Label>Book Search</Form.Label>
-          <Form.Control ref={bookInput} type="search" placeholder="Enter book title"/>
+          <Form.Control ref={bookInput} type="search" placeholder="Enter book title or author"/>
         </Form.Group >
 
         <Col style={{display: 'flex', justifyContent: 'flex-end'}}>

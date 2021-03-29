@@ -4,15 +4,15 @@ import SearchForm from "../../components/Search";
 
 function BookSearch() {
 
-  const [books, setBooks] = useState([]);
+  const [bookList, setBookList] = useState([]);
 
-  console.log("Books:", books);
+  console.log("Search List:", bookList);
 
   return (
     <div className="p-2">
-      <SearchForm setBooks={setBooks} />
+      <SearchForm setBooks={setBookList} />
 
-      <Results books={books}/>
+      <Results books={bookList}/>
     </div>
   )
 }
