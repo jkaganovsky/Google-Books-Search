@@ -3,6 +3,7 @@ import { Button, Card, Media, Row, Col } from "react-bootstrap";
 import SaveBtn from "../SaveBtn";
 
 function Results({ books }) {
+
   return (
 
     <Card border="info">
@@ -18,7 +19,7 @@ function Results({ books }) {
                   <Row className="p-3">
                     <Col sm={4} style={{display: 'flex', justifyContent: 'flex-end'}}>
                       <Button href={book.volumeInfo.infoLink}>View</Button>
-                      <SaveBtn book={book.id}/>
+                      <SaveBtn books={book.volumeInfo}/>
                     </Col>
                     <Col sm={8}>
                       <h6>{book.volumeInfo.title}</h6>
