@@ -17,7 +17,7 @@ function SavedResults({ books }) {
                 <Card.Body>
                   <Row className="p-3">
                     <Col sm={4} style={{display: 'flex', justifyContent: 'flex-end'}}>
-                      {/* <Button href={book.volumeInfo.infoLink}>View</Button> */}
+                      {/* <Button href={books.infoLink}>View</Button> */}
                       <DeleteBtn bookId={book._id}/>
                     </Col>
                     <Col sm={8}>
@@ -28,13 +28,13 @@ function SavedResults({ books }) {
 
                   <ul className="list-unstyled">
                     <Media as="li">
-                      <img
+                      {/* <img
                         width={64}
                         height={64}
                         className="mr-3"
-                        // src={book.volumeInfo.imageLinks.smallThumbnail}
-                        // alt={book.volumeInfo.title}
-                      />
+                        src={book.imageLinks.smallThumbnail}
+                        alt={book.title}
+                      /> */}
                       <Media.Body>
                         <p>{book.description}</p>
                       </Media.Body>
