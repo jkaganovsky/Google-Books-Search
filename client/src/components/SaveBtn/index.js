@@ -8,7 +8,6 @@ function SaveBtn({ books }) {
 
     API.addBooks(books)
       .then(({data}) => {
-        res.json(data);
         console.log("Saved Book:", data);
       })
       .catch((err) => {
